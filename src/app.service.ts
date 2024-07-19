@@ -5,8 +5,15 @@ import { Inzerat, inzeraty } from './inzeraty';
 @Injectable()
 export class InzeratService {
   //
-  public getAllInzeraty(): Inzerat[] {
-    return inzeraty;
+  public getAllCats(): Inzerat[] {
+    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === 'Kočka');
+    return newInzeraty;
+  }
+
+  public getAllDogs(): Inzerat[] {
+    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === 'Pes');
+
+    return newInzeraty;
   }
 
   public getInzeratById(inzeratID) {
