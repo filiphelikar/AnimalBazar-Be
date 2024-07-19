@@ -8,6 +8,11 @@ import { Inzerat } from './inzeraty';
 export class AppController {
   constructor(private readonly inzeratService: InzeratService) {}
 
+  @Get()
+  public getAllInzerat() {
+    return this.inzeratService.getAllInzerat();
+  }
+
   @Get('kocka')
   public getAllCats() {
     return this.inzeratService.getAllCats();

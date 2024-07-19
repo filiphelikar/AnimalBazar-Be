@@ -5,6 +5,10 @@ import { Inzerat, inzeraty } from './inzeraty';
 @Injectable()
 export class InzeratService {
   //
+  public getAllInzerat(): Inzerat[] {
+    return inzeraty;
+  }
+
   public getAllCats(): Inzerat[] {
     const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === 'Kočka');
     return newInzeraty;

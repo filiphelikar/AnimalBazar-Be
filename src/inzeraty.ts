@@ -5,7 +5,7 @@ export interface Inzerat {
   telefon: string;
   email: string;
   popis: string;
-  cena: number | string;
+  cena: number | 'Za odvoz';
   druh: 'Kočka' | 'Pes';
   images: string[];
 }
