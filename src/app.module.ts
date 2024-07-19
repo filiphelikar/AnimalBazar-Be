@@ -1,10 +1,18 @@
+//app.module.ts
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+import { InzeratService } from './app.service'; // Oprav název služby na správný název třídy
 
 @Module({
-  imports: [],
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+      serveRoot: '/',
+    }),
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [InzeratService],
 })
 export class AppModule {}
