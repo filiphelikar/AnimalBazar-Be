@@ -194,7 +194,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 0,
+    id: 10,
     nazev: 'Nabízím kočku perskou',
     prodejce: 'Pavel Novák',
     telefon: '777 123 456',
@@ -212,7 +212,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 1,
+    id: 11,
     nazev: 'Britská kočka k adopci',
     prodejce: 'Jana Dvořáková',
     telefon: '774 987 654',
@@ -230,7 +230,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 2,
+    id: 12,
     nazev: 'Štěňátka evropského krátkosrstého psa',
     prodejce: 'Karel Svoboda',
     telefon: '602 345 678',
@@ -248,7 +248,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 3,
+    id: 13,
     nazev: 'Sibiřská kočka k adopci',
     prodejce: 'Eva Novotná',
     telefon: '605 432 876',
@@ -266,7 +266,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 4,
+    id: 14,
     nazev: 'Sphynx pes bez srsti',
     prodejce: 'Michal Černý',
     telefon: '721 876 543',
@@ -284,7 +284,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 5,
+    id: 15,
     nazev: 'Siamská kočka k adopci',
     prodejce: 'Petra Malá',
     telefon: '731 654 321',
@@ -302,7 +302,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 6,
+    id: 16,
     nazev: 'Fenka zlatého retrívra',
     prodejce: 'Tomáš Vávra',
     telefon: '604 123 789',
@@ -320,7 +320,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 7,
+    id: 17,
     nazev: 'Mainská mývalí kočka',
     prodejce: 'Lenka Horáková',
     telefon: '777 321 654',
@@ -338,7 +338,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 8,
+    id: 18,
     nazev: 'Štěňátko ragdoll',
     prodejce: 'Josef Král',
     telefon: '603 987 654',
@@ -356,7 +356,7 @@ const inzeraty: Inzerat[] = [
     psc: 11000,
   },
   {
-    id: 9,
+    id: 19,
     nazev: 'Kočka bengálská k adopci',
     prodejce: 'Alena Veselá',
     telefon: '601 456 789',
