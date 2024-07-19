@@ -8,6 +8,8 @@ export interface Inzerat {
   cena: number | 'Za odvoz';
   druh: 'Kočka' | 'Pes';
   images: string[];
+  lokalita: string;
+  psc: number;
 }
 
 const inzeraty: Inzerat[] = [
@@ -26,6 +28,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 1,
@@ -42,6 +46,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 2,
@@ -58,6 +64,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 3,
@@ -74,6 +82,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 4,
@@ -90,6 +100,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 5,
@@ -106,6 +118,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 6,
@@ -122,6 +136,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 7,
@@ -138,6 +154,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 8,
@@ -154,6 +172,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 9,
@@ -170,6 +190,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 0,
@@ -186,6 +208,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 1,
@@ -202,6 +226,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 2,
@@ -218,6 +244,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 3,
@@ -234,6 +262,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 4,
@@ -250,6 +280,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 5,
@@ -266,6 +298,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 6,
@@ -282,6 +316,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 7,
@@ -298,6 +334,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 8,
@@ -314,6 +352,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
   {
     id: 9,
@@ -330,6 +370,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
+    lokalita: 'Praha',
+    psc: 11000,
   },
 ];
 
