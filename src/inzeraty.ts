@@ -22,9 +22,9 @@ const inzeraty: Inzerat[] = [
     cena: 1500,
     druh: 'Kočka',
     images: [
-      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
+      'http://localhost:3000/images/IMG_2.JPEG',
     ],
   },
   {
@@ -38,9 +38,9 @@ const inzeraty: Inzerat[] = [
     cena: 'Za odvoz',
     druh: 'Kočka',
     images: [
+      'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
-      'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
   {
@@ -70,8 +70,8 @@ const inzeraty: Inzerat[] = [
     cena: 3000,
     druh: 'Kočka',
     images: [
-      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
+      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
@@ -86,9 +86,9 @@ const inzeraty: Inzerat[] = [
     cena: 2500,
     druh: 'Kočka',
     images: [
+      'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
-      'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
   {
@@ -102,8 +102,8 @@ const inzeraty: Inzerat[] = [
     cena: 'Za odvoz',
     druh: 'Kočka',
     images: [
-      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
+      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
@@ -134,8 +134,8 @@ const inzeraty: Inzerat[] = [
     cena: 4000,
     druh: 'Kočka',
     images: [
-      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
+      'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
@@ -150,9 +150,9 @@ const inzeraty: Inzerat[] = [
     cena: 3500,
     druh: 'Kočka',
     images: [
+      'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_1.JPEG',
-      'http://localhost:3000/images/IMG_3.JPEG',
     ],
   },
   {
