@@ -45,12 +45,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 2,
-    nazev: 'Koťátka evropské krátkosrsté',
+    nazev: 'Štěňátka evropského krátkosrstého psa',
     prodejce: 'Karel Svoboda',
     telefon: '602 345 678',
     email: 'karel.svoboda@example.com',
     popis:
-      'Koťátka evropské krátkosrsté kočky, jsou velmi hravá a zvídavá. Nabízíme tři koťátka, dvě holky a jednoho kluka. Všechna koťátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
+      'Štěňátka evropského krátkosrstého psa, jsou velmi hravá a zvídavá. Nabízíme tři štěňátka, dvě holky a jednoho kluka. Všechna štěňátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
     cena: 500,
     druh: 'Pes',
     images: [
@@ -77,12 +77,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 4,
-    nazev: 'Sphynx kočka bez srsti',
+    nazev: 'Sphynx pes bez srsti',
     prodejce: 'Michal Černý',
     telefon: '721 876 543',
     email: 'michal.cerny@example.com',
     popis:
-      'Sphynx kočka, bez srsti, velmi mazlivá a společenská. Tato kočka je ideální pro lidi s alergií na kočičí srst. Je zvyklá na život v bytě a miluje teplé prostředí. Hledáme pro ni nový domov, kde bude mít dostatek pozornosti a péče.',
+      'Sphynx pes, bez srsti, velmi mazlivý a společenský. Tento pes je ideální pro lidi s alergií na srst. Je zvyklý na život v bytě a miluje teplé prostředí. Hledáme pro něj nový domov, kde bude mít dostatek pozornosti a péče.',
     cena: 2500,
     druh: 'Pes',
     images: [
@@ -109,7 +109,7 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 6,
-    nazev: 'Fenku zlatého retrívra',
+    nazev: 'Fenka zlatého retrívra',
     prodejce: 'Tomáš Vávra',
     telefon: '604 123 789',
     email: 'tomas.vavra@example.com',
@@ -141,12 +141,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 8,
-    nazev: 'Koťátko ragdoll',
+    nazev: 'Štěňátko ragdoll',
     prodejce: 'Josef Král',
     telefon: '603 987 654',
     email: 'josef.kral@example.com',
     popis:
-      'Koťátko ragdoll, velmi přítulné a hravé. Toto koťátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
+      'Štěňátko ragdoll, velmi přítulné a hravé. Toto štěňátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
     cena: 3500,
     druh: 'Pes',
     images: [
@@ -162,13 +162,13 @@ const inzeraty: Inzerat[] = [
     telefon: '601 456 789',
     email: 'alena.vesela@example.com',
     popis:
-      'Kočka bengálská, je velmi aktivní a hravá. Tato kočka je vhodná pro lidi, kteří mají rádi aktivní životní styl. Její srst je krátká a lesklá, vyžaduje minimální péči. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
-    cena: 'Za odvoz',
+      'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
+    cena: 4500,
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
-      'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
+      'http://localhost:3000/images/IMG_1.JPEG',
     ],
   },
   {
@@ -205,12 +205,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 2,
-    nazev: 'Koťátka evropské krátkosrsté',
+    nazev: 'Štěňátka evropského krátkosrstého psa',
     prodejce: 'Karel Svoboda',
     telefon: '602 345 678',
     email: 'karel.svoboda@example.com',
     popis:
-      'Koťátka evropské krátkosrsté kočky, jsou velmi hravá a zvídavá. Nabízíme tři koťátka, dvě holky a jednoho kluka. Všechna koťátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
+      'Štěňátka evropského krátkosrstého psa, jsou velmi hravá a zvídavá. Nabízíme tři štěňátka, dvě holky a jednoho kluka. Všechna štěňátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
     cena: 500,
     druh: 'Pes',
     images: [
@@ -237,12 +237,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 4,
-    nazev: 'Sphynx kočka bez srsti',
+    nazev: 'Sphynx pes bez srsti',
     prodejce: 'Michal Černý',
     telefon: '721 876 543',
     email: 'michal.cerny@example.com',
     popis:
-      'Sphynx kočka, bez srsti, velmi mazlivá a společenská. Tato kočka je ideální pro lidi s alergií na kočičí srst. Je zvyklá na život v bytě a miluje teplé prostředí. Hledáme pro ni nový domov, kde bude mít dostatek pozornosti a péče.',
+      'Sphynx pes, bez srsti, velmi mazlivý a společenský. Tento pes je ideální pro lidi s alergií na srst. Je zvyklý na život v bytě a miluje teplé prostředí. Hledáme pro něj nový domov, kde bude mít dostatek pozornosti a péče.',
     cena: 2500,
     druh: 'Pes',
     images: [
@@ -269,7 +269,7 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 6,
-    nazev: 'Fenku zlatého retrívra',
+    nazev: 'Fenka zlatého retrívra',
     prodejce: 'Tomáš Vávra',
     telefon: '604 123 789',
     email: 'tomas.vavra@example.com',
@@ -301,12 +301,12 @@ const inzeraty: Inzerat[] = [
   },
   {
     id: 8,
-    nazev: 'Koťátko ragdoll',
+    nazev: 'Štěňátko ragdoll',
     prodejce: 'Josef Král',
     telefon: '603 987 654',
     email: 'josef.kral@example.com',
     popis:
-      'Koťátko ragdoll, velmi přítulné a hravé. Toto koťátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
+      'Štěňátko ragdoll, velmi přítulné a hravé. Toto štěňátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
     cena: 3500,
     druh: 'Pes',
     images: [
@@ -322,13 +322,13 @@ const inzeraty: Inzerat[] = [
     telefon: '601 456 789',
     email: 'alena.vesela@example.com',
     popis:
-      'Kočka bengálská, je velmi aktivní a hravá. Tato kočka je vhodná pro lidi, kteří mají rádi aktivní životní styl. Její srst je krátká a lesklá, vyžaduje minimální péči. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
-    cena: 'Za odvoz',
+      'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
+    cena: 4500,
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
-      'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
+      'http://localhost:3000/images/IMG_1.JPEG',
     ],
   },
 ];
