@@ -20,7 +20,7 @@ export class InzeratService {
     return newInzeraty;
   }
 
-  public getInzeratById(inzeratID) {
-    return inzeraty.find((inzerat) => inzerat.id === inzeratID);
+  public getInzeratById(id: number) {
+    return inzeraty.find((inzerat) => inzerat.id === id);
   }
 }
