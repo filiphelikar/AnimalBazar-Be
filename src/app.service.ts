@@ -1,22 +1,21 @@
 //app.service.ts
 import { Injectable } from '@nestjs/common';
 import { Inzerat, inzeraty } from './inzeraty';
+import { druhy, Druhy } from './druhy';
 
 @Injectable()
 export class InzeratService {
   //
+  public getAllDruhy(): Druhy[] {
+    return druhy;
+  }
+
   public getAllInzerat(): Inzerat[] {
     return inzeraty;
   }
 
-  public getAllCats(): Inzerat[] {
-    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === 'Kočka');
-    return newInzeraty;
-  }
-
-  public getAllDogs(): Inzerat[] {
-    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === 'Pes');
-
+  public getAllOfOneDruh(druh: Druhy): Inzerat[] {
+    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === druh);
     return newInzeraty;
   }
 

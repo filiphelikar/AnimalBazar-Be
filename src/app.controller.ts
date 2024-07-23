@@ -1,12 +1,17 @@
 //app.controller.ts
 import { Controller, Get, Param, Res } from '@nestjs/common';
-import { Response } from 'express';
 import { InzeratService } from './app.service';
 import { Inzerat } from './inzeraty';
+import { Druhy } from './druhy';
 
 @Controller('/api/')
 export class AppController {
   constructor(private readonly inzeratService: InzeratService) {}
+
+  @Get('druhy')
+  public getAllDruhy() {
+    return this.inzeratService.getAllDruhy();
+  }
 
   @Get('inzeraty')
   public getAllInzerat() {
@@ -14,13 +19,8 @@ export class AppController {
   }
 
   @Get('inzeraty/:druh')
-  public getInzeratyByDruh(@Param('druh') druh: string) {
-    //todo udělat druh v service a ne check tady
-    if (druh === 'kocka') {
-      return this.inzeratService.getAllCats();
-    } else if (druh === 'pes') {
-      return this.inzeratService.getAllDogs();
-    }
+  public getInzeratyByDruh(@Param('druh') druh: Druhy) {
+    return this.inzeratService.getAllOfOneDruh(druh);
   }
 
   @Get('inzerat/:id')

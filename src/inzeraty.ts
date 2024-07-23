@@ -1,3 +1,5 @@
+import { Druhy } from './druhy';
+
 export interface Inzerat {
   id: number;
   nazev: string;
@@ -6,7 +8,7 @@ export interface Inzerat {
   email: string;
   popis: string;
   cena: number | 'Za odvoz';
-  druh: 'Kočka' | 'Pes';
+  druh: Druhy;
   images: string[];
   lokalita: string;
   psc: number;
@@ -22,7 +24,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Nabízím kočku perskou, je velmi přátelská a vhodná k dětem. Kočka je stará tři roky a má všechny potřebné očkování. Je zvyklá na život v bytě a je velmi čistotná. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu a nemáme pro ni dostatek místa.',
     cena: 1500,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -40,7 +42,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Britská kočka, má všechny potřebné očkování. Je velmi hravá a miluje společnost lidí. Kočka je zvyklá na další domácí zvířata a dobře vychází s dětmi. Hledáme pro ni nový domov, protože se u nás objevila alergie na kočičí srst.',
     cena: 'Za odvoz',
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -76,7 +78,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Sibiřská kočka, vhodná do bytu i domu. Kočka je velmi mazlivá a miluje pozornost. Její srst je hustá a vyžaduje pravidelnou péči. Hledáme pro ni domov, kde bude mít dostatek prostoru pro pohyb a hraní. Kočka je očkovaná a čipovaná.',
     cena: 3000,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -112,7 +114,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Siamská kočka, hledá nový domov. Je velmi inteligentní a hravá, má ráda společnost a je zvyklá na děti. Její srst je krátká a lesklá, vyžaduje minimální péči. Hledáme pro ni nový domov kvůli stěhování do zahraničí.',
     cena: 'Za odvoz',
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -148,7 +150,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Mainská mývalí kočka, hledá nový domov. Tato kočka je velmi přítulná a má ráda společnost lidí. Její srst je hustá a vyžaduje pravidelnou péči. Kočka je zvyklá na život v bytě i na zahradě. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb.',
     cena: 4000,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -184,7 +186,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
     cena: 4500,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -202,7 +204,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Nabízím kočku perskou, je velmi přátelská a vhodná k dětem. Kočka je stará tři roky a má všechny potřebné očkování. Je zvyklá na život v bytě a je velmi čistotná. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu a nemáme pro ni dostatek místa.',
     cena: 1500,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -220,7 +222,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Britská kočka, má všechny potřebné očkování. Je velmi hravá a miluje společnost lidí. Kočka je zvyklá na další domácí zvířata a dobře vychází s dětmi. Hledáme pro ni nový domov, protože se u nás objevila alergie na kočičí srst.',
     cena: 'Za odvoz',
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -256,7 +258,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Sibiřská kočka, vhodná do bytu i domu. Kočka je velmi mazlivá a miluje pozornost. Její srst je hustá a vyžaduje pravidelnou péči. Hledáme pro ni domov, kde bude mít dostatek prostoru pro pohyb a hraní. Kočka je očkovaná a čipovaná.',
     cena: 3000,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -292,7 +294,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Siamská kočka, hledá nový domov. Je velmi inteligentní a hravá, má ráda společnost a je zvyklá na děti. Její srst je krátká a lesklá, vyžaduje minimální péči. Hledáme pro ni nový domov kvůli stěhování do zahraničí.',
     cena: 'Za odvoz',
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -328,7 +330,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Mainská mývalí kočka, hledá nový domov. Tato kočka je velmi přítulná a má ráda společnost lidí. Její srst je hustá a vyžaduje pravidelnou péči. Kočka je zvyklá na život v bytě i na zahradě. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb.',
     cena: 4000,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -364,7 +366,7 @@ const inzeraty: Inzerat[] = [
     popis:
       'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
     cena: 4500,
-    druh: 'Kočka',
+    druh: 'Kocka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
       'http://localhost:3000/images/IMG_3.JPEG',
