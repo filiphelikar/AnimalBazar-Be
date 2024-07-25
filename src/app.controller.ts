@@ -1,5 +1,5 @@
 //app.controller.ts
-import { Controller, Get, Param, Res } from '@nestjs/common';
+import { Controller, Get, Param, Query, Res } from '@nestjs/common';
 import { InzeratService } from './app.service';
 import { Inzerat } from './inzeraty';
 import { Druhy } from './druhy';
@@ -27,5 +27,9 @@ export class AppController {
   public getInzeratById(@Param('id') id: string): Inzerat {
     const inzeratID = +id;
     return this.inzeratService.getInzeratById(inzeratID);
+  }
+  @Get('search')
+  getFilteredInzeraty(@Query('param') param: string) {
+    return this.inzeratService.getFilteredInzeraty(param);
   }
 }
