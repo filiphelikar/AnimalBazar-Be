@@ -1,8 +1,9 @@
 //app.controller.ts
-import { Controller, Get, Param, Query, Res } from '@nestjs/common';
-import { InzeratService } from './app.service';
-import { Inzerat } from './inzeraty';
-import { Druhy } from './druhy';
+import {Body, Controller, Get, Param, Post, Query, Res} from '@nestjs/common';
+import {InzeratService} from './app.service';
+import {Inzerat} from './inzeraty';
+import {Druhy} from './druhy';
+import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
 
 @Controller('/api/')
 export class AppController {
@@ -31,5 +32,10 @@ export class AppController {
   @Get('search')
   getFilteredInzeraty(@Query('param') param: string) {
     return this.inzeratService.getFilteredInzeraty(param);
+  }
+
+  @Post('inzerat/create')
+  public createInzerat(@Body() createInzeratDto: CreateInzeratDto) {
+    return this.inzeratService.createInzerat(createInzeratDto);
   }
 }
