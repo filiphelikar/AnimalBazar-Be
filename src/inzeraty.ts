@@ -1,4 +1,4 @@
-import { Druhy } from './druhy';
+import {Druhy} from './druhy';
 
 export interface Inzerat {
   id: number;
@@ -7,11 +7,11 @@ export interface Inzerat {
   telefon: string;
   email: string;
   popis: string;
-  cena: number | 'Za odvoz';
+  cena: string | 'Za odvoz';
   druh: Druhy;
   images: string[];
   lokalita: string;
-  psc: number;
+  psc: string;
 }
 
 const inzeraty: Inzerat[] = [
@@ -23,7 +23,7 @@ const inzeraty: Inzerat[] = [
     email: 'pavel.novak@example.com',
     popis:
       'Nabízím kočku perskou, je velmi přátelská a vhodná k dětem. Kočka je stará tři roky a má všechny potřebné očkování. Je zvyklá na život v bytě a je velmi čistotná. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu a nemáme pro ni dostatek místa.',
-    cena: 1500,
+    cena: '1500',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -31,7 +31,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 1,
@@ -49,7 +49,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ const inzeraty: Inzerat[] = [
     email: 'karel.svoboda@example.com',
     popis:
       'Štěňátka evropského krátkosrstého psa, jsou velmi hravá a zvídavá. Nabízíme tři štěňátka, dvě holky a jednoho kluka. Všechna štěňátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
-    cena: 500,
+    cena: '500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -67,7 +67,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ const inzeraty: Inzerat[] = [
     email: 'eva.novotna@example.com',
     popis:
       'Sibiřská kočka, vhodná do bytu i domu. Kočka je velmi mazlivá a miluje pozornost. Její srst je hustá a vyžaduje pravidelnou péči. Hledáme pro ni domov, kde bude mít dostatek prostoru pro pohyb a hraní. Kočka je očkovaná a čipovaná.',
-    cena: 3000,
+    cena: '3000',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -85,7 +85,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 4,
@@ -95,7 +95,7 @@ const inzeraty: Inzerat[] = [
     email: 'michal.cerny@example.com',
     popis:
       'Sphynx pes, bez srsti, velmi mazlivý a společenský. Tento pes je ideální pro lidi s alergií na srst. Je zvyklý na život v bytě a miluje teplé prostředí. Hledáme pro něj nový domov, kde bude mít dostatek pozornosti a péče.',
-    cena: 2500,
+    cena: '2500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -103,7 +103,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 5,
@@ -121,7 +121,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 6,
@@ -131,7 +131,7 @@ const inzeraty: Inzerat[] = [
     email: 'tomas.vavra@example.com',
     popis:
       'Nabízím fenku zlatého retrívra, velmi přátelská a hravá. Fenka je stará čtyři roky, má všechny potřebné očkování a je čipovaná. Je zvyklá na děti a další domácí zvířata. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu.',
-    cena: 2000,
+    cena: '2000',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -139,7 +139,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 7,
@@ -149,7 +149,7 @@ const inzeraty: Inzerat[] = [
     email: 'lenka.horakova@example.com',
     popis:
       'Mainská mývalí kočka, hledá nový domov. Tato kočka je velmi přítulná a má ráda společnost lidí. Její srst je hustá a vyžaduje pravidelnou péči. Kočka je zvyklá na život v bytě i na zahradě. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb.',
-    cena: 4000,
+    cena: '4000',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -157,7 +157,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 8,
@@ -167,7 +167,7 @@ const inzeraty: Inzerat[] = [
     email: 'josef.kral@example.com',
     popis:
       'Štěňátko ragdoll, velmi přítulné a hravé. Toto štěňátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
-    cena: 3500,
+    cena: '3500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -175,7 +175,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 9,
@@ -185,7 +185,7 @@ const inzeraty: Inzerat[] = [
     email: 'alena.vesela@example.com',
     popis:
       'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
-    cena: 4500,
+    cena: '4500',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -193,7 +193,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 10,
@@ -203,7 +203,7 @@ const inzeraty: Inzerat[] = [
     email: 'pavel.novak@example.com',
     popis:
       'Nabízím kočku perskou, je velmi přátelská a vhodná k dětem. Kočka je stará tři roky a má všechny potřebné očkování. Je zvyklá na život v bytě a je velmi čistotná. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu a nemáme pro ni dostatek místa.',
-    cena: 1500,
+    cena: '1500',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -211,7 +211,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_2.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 11,
@@ -229,7 +229,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 12,
@@ -239,7 +239,7 @@ const inzeraty: Inzerat[] = [
     email: 'karel.svoboda@example.com',
     popis:
       'Štěňátka evropského krátkosrstého psa, jsou velmi hravá a zvídavá. Nabízíme tři štěňátka, dvě holky a jednoho kluka. Všechna štěňátka jsou odčervená a mají základní očkování. Jsou zvyklá na život v domě i na zahradě.',
-    cena: 500,
+    cena: '500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -247,7 +247,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 13,
@@ -257,7 +257,7 @@ const inzeraty: Inzerat[] = [
     email: 'eva.novotna@example.com',
     popis:
       'Sibiřská kočka, vhodná do bytu i domu. Kočka je velmi mazlivá a miluje pozornost. Její srst je hustá a vyžaduje pravidelnou péči. Hledáme pro ni domov, kde bude mít dostatek prostoru pro pohyb a hraní. Kočka je očkovaná a čipovaná.',
-    cena: 3000,
+    cena: '3000',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -265,7 +265,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 14,
@@ -275,7 +275,7 @@ const inzeraty: Inzerat[] = [
     email: 'michal.cerny@example.com',
     popis:
       'Sphynx pes, bez srsti, velmi mazlivý a společenský. Tento pes je ideální pro lidi s alergií na srst. Je zvyklý na život v bytě a miluje teplé prostředí. Hledáme pro něj nový domov, kde bude mít dostatek pozornosti a péče.',
-    cena: 2500,
+    cena: '2500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -283,7 +283,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 15,
@@ -301,7 +301,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 16,
@@ -311,7 +311,7 @@ const inzeraty: Inzerat[] = [
     email: 'tomas.vavra@example.com',
     popis:
       'Nabízím fenku zlatého retrívra, velmi přátelská a hravá. Fenka je stará čtyři roky, má všechny potřebné očkování a je čipovaná. Je zvyklá na děti a další domácí zvířata. Hledáme pro ni nový domov, protože se stěhujeme do menšího bytu.',
-    cena: 2000,
+    cena: '2000',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -319,7 +319,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 17,
@@ -329,7 +329,7 @@ const inzeraty: Inzerat[] = [
     email: 'lenka.horakova@example.com',
     popis:
       'Mainská mývalí kočka, hledá nový domov. Tato kočka je velmi přítulná a má ráda společnost lidí. Její srst je hustá a vyžaduje pravidelnou péči. Kočka je zvyklá na život v bytě i na zahradě. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb.',
-    cena: 4000,
+    cena: '4000',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_1.JPEG',
@@ -337,7 +337,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_3.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 18,
@@ -347,7 +347,7 @@ const inzeraty: Inzerat[] = [
     email: 'josef.kral@example.com',
     popis:
       'Štěňátko ragdoll, velmi přítulné a hravé. Toto štěňátko je ideální pro rodiny s dětmi, je velmi klidné a mazlivé. Má základní očkování a je odčervené. Hledáme pro něj nový domov, kde bude mít dostatek lásky a péče.',
-    cena: 3500,
+    cena: '3500',
     druh: 'Pes',
     images: [
       'http://localhost:3000/images/IMG_3.JPEG',
@@ -355,7 +355,7 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
   {
     id: 19,
@@ -365,7 +365,7 @@ const inzeraty: Inzerat[] = [
     email: 'alena.vesela@example.com',
     popis:
       'Kočka bengálská, je velmi aktivní a hravá. Má krásnou skvrnitou srst, která vyžaduje pravidelnou péči. Kočka je očkovaná a čipovaná. Hledáme pro ni nový domov, kde bude mít dostatek prostoru pro pohyb a hraní.',
-    cena: 4500,
+    cena: '4500',
     druh: 'Kočka',
     images: [
       'http://localhost:3000/images/IMG_2.JPEG',
@@ -373,8 +373,8 @@ const inzeraty: Inzerat[] = [
       'http://localhost:3000/images/IMG_1.JPEG',
     ],
     lokalita: 'Praha',
-    psc: 11000,
+    psc: '11000',
   },
 ];
 
-export { inzeraty };
+export {inzeraty};

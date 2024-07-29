@@ -46,5 +46,20 @@ export class InzeratService {
     return result;
   }
 
-  public createInzerat(inzerat: CreateInzeratDto) {}
+  public createInzerat(inzerat: CreateInzeratDto) {
+    const id = Date.now();
+    const newINzerat: Inzerat & CreateInzeratDto = {
+      ...inzerat,
+      id,
+      images: [
+        'http://localhost:3000/images/IMG_1.JPEG',
+        'http://localhost:3000/images/IMG_3.JPEG',
+        'http://localhost:3000/images/IMG_2.JPEG',
+      ],
+    };
+    //TO DO authentication
+    delete newINzerat.heslo;
+    inzeraty.push(newINzerat);
+    return newINzerat;
+  }
 }

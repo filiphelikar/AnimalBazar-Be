@@ -1,11 +1,15 @@
+import {Druhy} from 'src/druhy';
+
 export class CreateInzeratDto {
-  nadpis: string;
+  nazev: string;
   popis: string;
-  cena: number | 'Za odvoz';
+  cena: string | 'Za odvoz';
   prodejce: string;
   telefon: string;
   lokalita: string;
   psc: string;
   email: string;
   heslo: string;
+  images: string[];
+  druh: Druhy;
 }
