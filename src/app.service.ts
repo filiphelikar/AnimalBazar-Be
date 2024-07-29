@@ -1,11 +1,23 @@
 //app.service.ts
-import { Injectable } from '@nestjs/common';
-import { Inzerat, inzeraty } from './inzeraty';
-import { druhy, Druhy } from './druhy';
+import {Injectable} from '@nestjs/common';
+import {Inzerat, inzeraty} from './inzeraty';
+import {druhy, Druhy} from './druhy';
+import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
 
 @Injectable()
 export class InzeratService {
-  //
+  private normalizeString(str: string) {
+    return str
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  private inzeratByDruh(druh) {
+    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === druh);
+    return newInzeraty;
+  }
+
   public getAllDruhy(): Druhy[] {
     return druhy;
   }
@@ -15,8 +27,7 @@ export class InzeratService {
   }
 
   public getAllOfOneDruh(druh: Druhy): Inzerat[] {
-    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === druh);
-    return newInzeraty;
+    return this.inzeratByDruh(druh);
   }
 
   public getInzeratById(id: number) {
@@ -24,28 +35,16 @@ export class InzeratService {
   }
 
   public getFilteredInzeraty(param: string): Inzerat[] {
-    const normalizeString = (str: string) =>
-      str
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase();
-    const paramWords = param
-      .trim()
-      .toLowerCase()
-      .split(/\s+/)
-      .map(normalizeString);
+    const result = inzeraty.filter((inzerat) => {
+      return this.normalizeString(
+        Object.values(inzerat)
+          .filter((hodnota) => typeof hodnota == 'string')
+          .join(' '),
+      ).includes(this.normalizeString(param));
+    });
 
-    const matchesParam = (str: string) =>
-      paramWords.every((word) => normalizeString(str).includes(word));
-
-    const inzeratyByNazev = inzeraty.filter((inzerat) =>
-      matchesParam(inzerat.nazev),
-    );
-    const inzeratyByPopis = inzeraty.filter(
-      (inzerat) =>
-        matchesParam(inzerat.popis) && !inzeratyByNazev.includes(inzerat),
-    );
-
-    return [...inzeratyByNazev, ...inzeratyByPopis];
+    return result;
   }
+
+  public createInzerat(inzerat: CreateInzeratDto) {}
 }
