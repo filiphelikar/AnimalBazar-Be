@@ -46,20 +46,21 @@ export class InzeratService {
     return result;
   }
 
-  public createInzerat(inzerat: CreateInzeratDto) {
+  public createInzerat(inzerat: CreateInzeratDto, images: Express.Multer.File[]) {
+    const imgArray = [];
+    images.forEach((image) => {
+      imgArray.push(`http://localhost:3000/images/${image.filename}`);
+    });
     const id = Date.now();
-    const newINzerat: Inzerat & CreateInzeratDto = {
+    const newInzerat: Inzerat & CreateInzeratDto = {
       ...inzerat,
       id,
-      images: [
-        'http://localhost:3000/images/IMG_1.JPEG',
-        'http://localhost:3000/images/IMG_3.JPEG',
-        'http://localhost:3000/images/IMG_2.JPEG',
-      ],
     };
     //TO DO authentication
-    delete newINzerat.heslo;
-    inzeraty.push(newINzerat);
-    return newINzerat;
+    delete newInzerat.heslo;
+    newInzerat.images = imgArray;
+    inzeraty.push(newInzerat);
+
+    return {id: newInzerat.id, druh: newInzerat.druh};
   }
 }
