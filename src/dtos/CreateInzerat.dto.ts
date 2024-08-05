@@ -12,4 +12,5 @@ export class CreateInzeratDto {
   heslo: string;
   images: string[];
   druh: Druhy;
+  order: string;
 }

@@ -3,9 +3,16 @@ import {Injectable} from '@nestjs/common';
 import {Inzerat, inzeraty} from './inzeraty';
 import {druhy, Druhy} from './druhy';
 import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
+import {AbstractMongoService} from './mongo.service';
+import {InzeratSchema} from './schemas/inzerat.schema';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable()
-export class InzeratService {
+export class InzeratService extends AbstractMongoService<any> {
+  constructor() {
+    super('inzeraty', InzeratSchema);
+  }
+
   private normalizeString(str: string) {
     return str
       .normalize('NFD')
@@ -13,29 +20,38 @@ export class InzeratService {
       .toLowerCase();
   }
 
-  private inzeratByDruh(druh) {
-    const newInzeraty = inzeraty.filter((inzerat) => inzerat.druh === druh);
-    return newInzeraty;
-  }
-
   public getAllDruhy(): Druhy[] {
     return druhy;
   }
 
-  public getAllInzerat(): Inzerat[] {
-    return inzeraty;
+  public async getAllInzerat(): Promise<Inzerat[]> {
+    const data = await this.findAll();
+
+    return data.map((inzerat) => {
+      return {...inzerat._doc, id: inzerat._doc._id};
+    });
   }
 
-  public getAllOfOneDruh(druh: Druhy): Inzerat[] {
-    return this.inzeratByDruh(druh);
+  public async getAllOfOneDruh(druh: Druhy) {
+    const data = await this.findByQuery({druh});
+
+    return data.map((inzerat) => {
+      return {...inzerat._doc, id: inzerat._doc._id};
+    });
   }
 
-  public getInzeratById(id: number) {
-    return inzeraty.find((inzerat) => inzerat.id === id);
+  public async getInzeratById(id: string) {
+    return await this.findOne(id);
   }
 
-  public getFilteredInzeraty(param: string): Inzerat[] {
-    const result = inzeraty.filter((inzerat) => {
+  public async getFilteredInzeraty(param: string) {
+    let data = await this.findAll();
+
+    data = data.map((inzerat) => {
+      return {...inzerat._doc, id: inzerat._doc._id};
+    });
+
+    const result = data.filter((inzerat) => {
       return this.normalizeString(
         Object.values(inzerat)
           .filter((hodnota) => typeof hodnota == 'string')
@@ -46,21 +62,19 @@ export class InzeratService {
     return result;
   }
 
-  public createInzerat(inzerat: CreateInzeratDto, images: Express.Multer.File[]) {
+  public async createInzerat(inzerat: CreateInzeratDto, images: Express.Multer.File[]) {
     const imgArray = [];
-    images.forEach((image) => {
-      imgArray.push(`http://localhost:3000/images/${image.filename}`);
-    });
-    const id = Date.now();
-    const newInzerat: Inzerat & CreateInzeratDto = {
-      ...inzerat,
-      id,
-    };
-    //TO DO authentication
-    delete newInzerat.heslo;
-    newInzerat.images = imgArray;
-    inzeraty.push(newInzerat);
 
-    return {id: newInzerat.id, druh: newInzerat.druh};
+    JSON.parse(inzerat.order).forEach((name) => {
+      imgArray.push(`http://localhost:3000/images/${images.find((img) => img.originalname == name).filename}`);
+    });
+
+    delete inzerat.order;
+    inzerat.heslo = CryptoJS.MD5(inzerat.heslo).toString();
+
+    inzerat.images = imgArray;
+    const data = await this.createOne(inzerat);
+
+    return {id: data._id, druh: data.druh};
   }
 }

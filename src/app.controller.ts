@@ -39,18 +39,17 @@ export class AppController {
   }
 
   @Get('inzerat/:id')
-  public getInzeratById(@Param('id') id: string): Inzerat {
-    const inzeratID = +id;
-    return this.inzeratService.getInzeratById(inzeratID);
+  public getInzeratById(@Param('id') id: string) {
+    return this.inzeratService.getInzeratById(id);
   }
   @Get('search')
   getFilteredInzeraty(@Query('param') param: string) {
     return this.inzeratService.getFilteredInzeraty(param);
   }
 
-  @Post('inzerat/create')
+  @Post('create/inzerat')
   @UseInterceptors(
-    FilesInterceptor('images', 10, {
+    FilesInterceptor('images', 8, {
       storage: diskStorage({
         destination: './public/images',
         filename: (req, file, callback) => {
@@ -65,8 +64,6 @@ export class AppController {
     @UploadedFiles() images: Express.Multer.File[],
     @Body() createInzeratDto: CreateInzeratDto,
   ) {
-    console.log('Files:', images);
-    console.log('DTO:', createInzeratDto);
     return this.inzeratService.createInzerat(createInzeratDto, images);
   }
 }
