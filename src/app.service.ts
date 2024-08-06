@@ -1,4 +1,4 @@
-import {Injectable} from '@nestjs/common';
+import {ForbiddenException, Injectable} from '@nestjs/common';
 import {Inzerat} from './inzeraty';
 import {druhy, Druhy} from './druhy';
 import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
@@ -77,6 +77,16 @@ export class InzeratService extends AbstractMongoService<any> {
     } catch (error) {
       console.error('Error creating inzerat:', error);
       throw error;
+    }
+  }
+
+  public async deleteInzerat(params: {id: string; password: string}) {
+    const data = await this.findOne(params.id);
+    const password = CryptoJS.MD5(params.password).toString();
+    if (password === data.heslo) {
+      return this.deleteOne(params.id);
+    } else {
+      throw new ForbiddenException('Access denied. Invalid password.');
     }
   }
 }

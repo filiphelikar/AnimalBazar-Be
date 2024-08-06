@@ -2,6 +2,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   Post,
@@ -35,6 +36,11 @@ export class AppController {
   @Get('inzeraty/:druh')
   public getInzeratyByDruh(@Param('druh') druh: Druhy) {
     return this.inzeratService.getAllOfOneDruh(druh);
+  }
+
+  @Delete('inzerat/delete/')
+  public deleteInzerat(@Query() params: {id: string; password: string}) {
+    return this.inzeratService.deleteInzerat(params);
   }
 
   @Get('inzerat/:id')
