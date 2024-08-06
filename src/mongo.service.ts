@@ -23,7 +23,7 @@ export abstract class AbstractMongoService<T> {
     if (!this.connection) {
       try {
         this.connection = await mongoose.createConnection('mongodb://localhost:27017/bazosDB');
-        console.log(this.connection);
+        /* console.log(this.connection); */
       } catch (error) {
         console.error('Error connecting to MongoDB', error);
       }

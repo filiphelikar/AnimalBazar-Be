@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Inzerat, inzeraty} from './inzeraty';
+import {Inzerat} from './inzeraty';
 import {druhy, Druhy} from './druhy';
 import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
 import {AbstractMongoService} from './mongo.service';
@@ -38,10 +38,16 @@ export class InzeratService extends AbstractMongoService<any> {
     }
   }
 
-  public async getFilteredInzeraty(param: string): Promise<Inzerat[]> {
-    const data = await this.findAll();
+  public async getFilteredInzeraty(params: {druh: string; param: string}): Promise<Inzerat[]> {
+    let data;
+    if (!params.druh) {
+      data = await this.findAll();
+    } else {
+      const druh = params.druh;
+      data = await this.findByQuery({druh});
+    }
 
-    const normalizedParam = normalizeString(param);
+    const normalizedParam = normalizeString(params.param);
 
     return data
       .map((inzerat) => ({...inzerat._doc, id: inzerat._doc._id}))

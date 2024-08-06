@@ -12,7 +12,6 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import {InzeratService} from './app.service';
-import {Inzerat} from './inzeraty';
 import {Druhy} from './druhy';
 import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
 import {FilesInterceptor} from '@nestjs/platform-express';
@@ -42,9 +41,10 @@ export class AppController {
   public getInzeratById(@Param('id') id: string) {
     return this.inzeratService.getInzeratById(id);
   }
+
   @Get('search')
-  getFilteredInzeraty(@Query('param') param: string) {
-    return this.inzeratService.getFilteredInzeraty(param);
+  getFilteredInzeraty(@Query() params: {druh: string; param: string}) {
+    return this.inzeratService.getFilteredInzeraty(params);
   }
 
   @Post('create/inzerat')
