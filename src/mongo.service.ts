@@ -50,4 +50,8 @@ export abstract class AbstractMongoService<T> {
   async deleteOne(id: string): Promise<T | null> {
     return this.model.findByIdAndDelete(id).exec();
   }
+
+  async updateOne(id: string, update: Partial<T>): Promise<T | null> {
+    return this.model.findByIdAndUpdate(id, update, {new: true}).exec();
+  }
 }

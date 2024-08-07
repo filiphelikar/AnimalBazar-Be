@@ -6,6 +6,7 @@ import {AbstractMongoService} from './mongo.service';
 import {InzeratSchema} from './schemas/inzerat.schema';
 import * as CryptoJS from 'crypto-js';
 import {normalizeString, processImages} from './utils/utils';
+import {EditInzeratDto} from './dtos/EditInzerat.dto';
 
 @Injectable()
 export class InzeratService extends AbstractMongoService<any> {
@@ -85,6 +86,32 @@ export class InzeratService extends AbstractMongoService<any> {
     const password = CryptoJS.MD5(params.password).toString();
     if (password === data.heslo) {
       return this.deleteOne(params.id);
+    } else {
+      throw new ForbiddenException('Access denied. Invalid password.');
+    }
+  }
+
+  public async editInzerat(editInzeratDto: EditInzeratDto, images: Express.Multer.File[]) {
+    const data = await this.findOne(editInzeratDto._id);
+    const password = CryptoJS.MD5(editInzeratDto.heslo).toString();
+    if (password === data.heslo) {
+      const order = JSON.parse(editInzeratDto.order);
+      const updatedInzerat: Partial<EditInzeratDto> = {
+        cena: editInzeratDto.cena,
+        email: editInzeratDto.email,
+        lokalita: editInzeratDto.lokalita,
+        nazev: editInzeratDto.nazev,
+        popis: editInzeratDto.popis,
+        prodejce: editInzeratDto.prodejce,
+        psc: editInzeratDto.psc,
+        images: order.map((img) => {
+          return img.type == 'old' ?
+              img.name
+            : 'http://localhost:3000/images/' + images.find((image) => image.originalname == img.name).filename;
+        }),
+      };
+
+      return this.updateOne(editInzeratDto._id, updatedInzerat);
     } else {
       throw new ForbiddenException('Access denied. Invalid password.');
     }
