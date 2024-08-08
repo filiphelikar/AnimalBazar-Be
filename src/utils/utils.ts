@@ -1,3 +1,5 @@
+import {Inzerat} from 'src/inzeraty';
+
 export function normalizeString(str: string): string {
   return str
     .normalize('NFD')
@@ -18,3 +20,21 @@ export function processImages(order: string, images: Express.Multer.File[]): str
 
   return imgArray;
 }
+
+export const maxLengthCheck = (inzerat: Partial<Inzerat>): boolean => {
+  if (
+    inzerat.cena.length <= 6 &&
+    inzerat.email.length <= 40 &&
+    inzerat.images.length <= 8 &&
+    inzerat.lokalita.length <= 40 &&
+    inzerat.nazev.length <= 60 &&
+    inzerat.popis.length <= 600 &&
+    inzerat.prodejce.length <= 30 &&
+    inzerat.psc.length <= 10 &&
+    inzerat.telefon.length <= 16
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};

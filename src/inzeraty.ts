@@ -1,7 +1,7 @@
 import {Druhy} from './druhy';
 
 export interface Inzerat {
-  id: number;
+  _id: string;
   nazev: string;
   prodejce: string;
   telefon: string;

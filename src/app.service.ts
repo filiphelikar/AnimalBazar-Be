@@ -1,11 +1,11 @@
-import {ForbiddenException, Injectable} from '@nestjs/common';
+import {BadRequestException, ForbiddenException, Injectable} from '@nestjs/common';
 import {Inzerat} from './inzeraty';
 import {druhy, Druhy} from './druhy';
 import {CreateInzeratDto} from './dtos/CreateInzerat.dto';
 import {AbstractMongoService} from './mongo.service';
 import {InzeratSchema} from './schemas/inzerat.schema';
 import * as CryptoJS from 'crypto-js';
-import {normalizeString, processImages} from './utils/utils';
+import {maxLengthCheck, normalizeString, processImages} from './utils/utils';
 import {EditInzeratDto} from './dtos/EditInzerat.dto';
 
 @Injectable()
@@ -66,15 +66,18 @@ export class InzeratService extends AbstractMongoService<any> {
     images: Express.Multer.File[],
   ): Promise<{id: string; druh: Druhy}> {
     try {
-      const imgArray = processImages(inzeratDto.order, images);
+      if (maxLengthCheck(inzeratDto)) {
+        const imgArray = processImages(inzeratDto.order, images);
 
-      delete inzeratDto.order;
-      inzeratDto.heslo = CryptoJS.MD5(inzeratDto.heslo).toString();
-      inzeratDto.images = imgArray;
+        delete inzeratDto.order;
+        inzeratDto.heslo = CryptoJS.MD5(inzeratDto.heslo).toString();
+        inzeratDto.images = imgArray;
 
-      const createdInzerat = await this.createOne(inzeratDto);
-
-      return {id: createdInzerat._id, druh: createdInzerat.druh};
+        const createdInzerat = await this.createOne(inzeratDto);
+        return {id: createdInzerat._id, druh: createdInzerat.druh};
+      } else {
+        throw new BadRequestException('Bad request. to long inputs.');
+      }
     } catch (error) {
       console.error('Error creating inzerat:', error);
       throw error;
@@ -104,6 +107,7 @@ export class InzeratService extends AbstractMongoService<any> {
         popis: editInzeratDto.popis,
         prodejce: editInzeratDto.prodejce,
         psc: editInzeratDto.psc,
+        telefon: editInzeratDto.telefon,
         images: order.map((img) => {
           return img.type == 'old' ?
               img.name
@@ -111,7 +115,11 @@ export class InzeratService extends AbstractMongoService<any> {
         }),
       };
 
-      return this.updateOne(editInzeratDto._id, updatedInzerat);
+      if (maxLengthCheck(updatedInzerat)) {
+        return this.updateOne(editInzeratDto._id, updatedInzerat);
+      } else {
+        throw new BadRequestException('Bad request. to long inputs.');
+      }
     } else {
       throw new ForbiddenException('Access denied. Invalid password.');
     }
