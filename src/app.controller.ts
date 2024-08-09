@@ -1,5 +1,6 @@
 //app.controller.ts
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -66,6 +67,19 @@ export class AppController {
           callback(null, `${uniqueSuffix}${ext}`);
         },
       }),
+      fileFilter: (req, file, callback) => {
+        if (
+          file.mimetype === 'image/jpeg' ||
+          file.mimetype === 'image/jpg' ||
+          file.mimetype === 'image/heic' ||
+          file.mimetype === 'image/png' ||
+          file.mimetype === 'image/webp'
+        ) {
+          callback(null, true);
+        } else {
+          callback(new BadRequestException('Nahraný soubor musí být obrázek'), false);
+        }
+      },
     }),
   )
   public async createInzerat(

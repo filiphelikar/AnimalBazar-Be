@@ -21,20 +21,39 @@ export function processImages(order: string, images: Express.Multer.File[]): str
   return imgArray;
 }
 
-export const maxLengthCheck = (inzerat: Partial<Inzerat>): boolean => {
-  if (
-    inzerat.cena.length <= 6 &&
-    inzerat.email.length <= 40 &&
-    inzerat.images.length <= 8 &&
-    inzerat.lokalita.length <= 40 &&
-    inzerat.nazev.length <= 60 &&
-    inzerat.popis.length <= 600 &&
-    inzerat.prodejce.length <= 30 &&
-    inzerat.psc.length <= 10 &&
-    inzerat.telefon.length <= 16
-  ) {
-    return true;
+export const maxLengthCheck = (inzerat: Partial<Inzerat>, password?, images?): boolean => {
+  if (password && images) {
+    if (
+      inzerat.cena.length <= 8 &&
+      inzerat.email.length <= 50 &&
+      images.length <= 8 &&
+      inzerat.lokalita.length <= 40 &&
+      inzerat.nazev.length <= 60 &&
+      inzerat.popis.length <= 600 &&
+      inzerat.prodejce.length <= 30 &&
+      inzerat.psc.length <= 10 &&
+      inzerat.telefon.length <= 16 &&
+      password.length <= 50
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
-    return false;
+    if (
+      inzerat.cena.length <= 7 &&
+      inzerat.email.length <= 50 &&
+      inzerat.images.length <= 8 &&
+      inzerat.lokalita.length <= 40 &&
+      inzerat.nazev.length <= 60 &&
+      inzerat.popis.length <= 600 &&
+      inzerat.prodejce.length <= 30 &&
+      inzerat.psc.length <= 10 &&
+      inzerat.telefon.length <= 16
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };

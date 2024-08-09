@@ -66,7 +66,7 @@ export class InzeratService extends AbstractMongoService<any> {
     images: Express.Multer.File[],
   ): Promise<{id: string; druh: Druhy}> {
     try {
-      if (maxLengthCheck(inzeratDto)) {
+      if (maxLengthCheck(inzeratDto, inzeratDto.heslo, images)) {
         const imgArray = processImages(inzeratDto.order, images);
 
         delete inzeratDto.order;
