@@ -41,7 +41,7 @@ export const maxLengthCheck = (inzerat: Partial<Inzerat>, password?, images?): b
     }
   } else {
     if (
-      inzerat.cena.length <= 7 &&
+      inzerat.cena.length <= 8 &&
       inzerat.email.length <= 50 &&
       inzerat.images.length <= 8 &&
       inzerat.lokalita.length <= 40 &&
