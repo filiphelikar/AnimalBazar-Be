@@ -64,7 +64,7 @@ export class InzeratService extends AbstractMongoService<any> {
   public async createInzerat(
     inzeratDto: CreateInzeratDto,
     images: Express.Multer.File[],
-  ): Promise<{id: string; druh: Druhy}> {
+  ): Promise<{_id: string; druh: Druhy}> {
     try {
       if (maxLengthCheck(inzeratDto, inzeratDto.heslo, images)) {
         const imgArray = processImages(inzeratDto.order, images);
@@ -74,7 +74,7 @@ export class InzeratService extends AbstractMongoService<any> {
         inzeratDto.images = imgArray;
 
         const createdInzerat = await this.createOne(inzeratDto);
-        return {id: createdInzerat._id, druh: createdInzerat.druh};
+        return {_id: createdInzerat._id, druh: createdInzerat.druh};
       } else {
         throw new BadRequestException('Bad request. to long inputs.');
       }
